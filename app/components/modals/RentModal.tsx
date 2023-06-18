@@ -272,7 +272,7 @@ const RentModal = () => {
                 />
             </div>
         )
-    }
+    };
 
     return (
         <Modal
