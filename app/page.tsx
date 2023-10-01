@@ -25,7 +25,8 @@ const Home = async ({ searchParams }: HomeProps) => {
   return (
     <ClientOnly>
       <Container>
-        <div className="
+        <div
+          className="
           pt-24
           grid
           grid-cols-1
@@ -35,25 +36,20 @@ const Home = async ({ searchParams }: HomeProps) => {
           xl:grid-cols-5
           2xl:grid-cols-6
           gap-8
-          "
+        "
         >
-        <div>
-          {listings.map((listing) => {
-            return ((
-              <div>
-                <ListingCard
-                  currentUser={currentUser}
-                  key={listing.id}
-                  data={listing}
-                />
-              </div>
-            ))
-          })}
-        </div>
+          {listings.map((listing) => (
+            <div key={listing.id}>
+              <ListingCard
+                currentUser={currentUser}
+                data={listing}
+              />
+            </div>
+          ))}
         </div>
       </Container>
     </ClientOnly>
-  )
-}
+  );
+};
 
 export default Home;

@@ -100,7 +100,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
       const dayCount = differenceInDays(
         dateRange.endDate,
         dateRange.startDate
-      ) + 1;
+      ) + 1;    // + 1 to account for the first day of the reservation
 
       if (dayCount && listing.price) {
         setTotalPrice(dayCount * listing.price);
