@@ -5,13 +5,14 @@ import CategoryBox from "../CategoryBox";
 
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
 import { BsSnow } from 'react-icons/bs';
+import { MdHouseboat } from 'react-icons/md'
 import { IoDiamond } from 'react-icons/io5';
 import {
     GiBarn,
     GiBoatFishing,
     GiCactus,
     GiCastle,
-    GiCaveEntrance,
+    GiTreehouse,
     GiForestCamp,
     GiIsland,
     GiWindmill
@@ -78,9 +79,9 @@ export const categories = [
         description: 'This property is in the arctic!'
     },
     {
-        label: 'Cave',
-        icon: GiCaveEntrance,
-        description: 'This property is in a cave!'
+        label: 'Houseboats',
+        icon: MdHouseboat,
+        description: 'This property is on a boat!'
     },
         {
         label: 'Desert',
@@ -88,9 +89,9 @@ export const categories = [
         description: 'This property is in the desert!'
     },
     {
-        label: 'Barns',
-        icon: GiBarn,
-        description: 'This property is in a barn!'
+        label: 'Tree Houses',
+        icon: GiTreehouse,
+        description: 'This property is in a tree!'
     },
     {
         label: 'Lux',
