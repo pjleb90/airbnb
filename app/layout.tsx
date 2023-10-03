@@ -12,6 +12,7 @@ import SearchModal from './components/modals/SearchModal';
 
 import ToasterProvider from './providers/ToasterProvider';
 import getCurrentUser from './actions/getCurrentUser';
+import Footer from './components/Footer';
 
 
 const font = Nunito({
@@ -44,6 +45,7 @@ export default async function RootLayout({
         <div className='pb-20 pt-28'>
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   )
