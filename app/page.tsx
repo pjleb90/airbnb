@@ -11,8 +11,9 @@ interface HomeProps {
 }
 
 const Home = async ({ searchParams }: HomeProps) => {
-  const listings = await getListings(searchParams);
-  const currentUser = await getCurrentUser();
+  const listings = typeof window !== 'undefined' ? await getListings(searchParams) : [];
+  const currentUser = typeof window !== 'undefined' ? await getCurrentUser() : null;
+
 
   if (listings.length === 0) {
     return (
