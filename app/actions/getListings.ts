@@ -1,31 +1,29 @@
-'use client';
-
 import prisma from "@/app/libs/prismadb";
 
 export interface IListingsParams {
-  userId?: string;
-  guestCount?: number;
-  roomCount?: number;
-  bathroomCount?: number;
-  startDate?: string;
-  endDate?: string;
-  locationValue?: string;
-  category?: string;
+    userId?: string;
+    guestCount?: number;
+    roomCount?: number;
+    bathroomCount?: number;
+    startDate?: string;
+    endDate?: string;
+    locationValue?: string;
+    category?: string;
 }
 
 export default async function getListings(
-  params: IListingsParams
+    params: IListingsParams
 ) {
-  try {
-    const {
-      userId,
-      roomCount,
-      guestCount,
-      bathroomCount,
-      locationValue,
-      startDate,
-      endDate,
-      category,
+    try {
+      const {
+        userId,
+        roomCount,
+        guestCount,
+        bathroomCount,
+        locationValue,
+        startDate,
+        endDate,
+        category,
     } = params;
 
     let query: any = {};
@@ -40,7 +38,6 @@ export default async function getListings(
 
     if (roomCount) {
       query.roomCount = {
-        // gte = greater than or equal. The + is needed to convert roomCount from a string to a definite number
         gte: +roomCount
       }
     }
@@ -62,7 +59,7 @@ export default async function getListings(
     }
 
     if (startDate && endDate) {
-      query.NOT = {   // reverse the returned reservation dates
+      query.NOT = {
         reservations: {
           some: {
             OR: [
@@ -94,6 +91,6 @@ export default async function getListings(
 
     return safeListings;
   } catch (error: any) {
-    throw new Error(error);
+      throw new Error(error);
   }
 }
