@@ -13,6 +13,7 @@ import SearchModal from './components/modals/SearchModal';
 import ToasterProvider from './providers/ToasterProvider';
 import getCurrentUser from './actions/getCurrentUser';
 import Footer from './components/Footer';
+import type { Metadata } from 'next'
 
 
 const font = Nunito({
@@ -21,10 +22,21 @@ const font = Nunito({
 
 export const dynamic = "force-dynamic";
 
-export const metadata = {
-  title: 'Airbnb',
-  description: 'An Airbnb clone inspired by Code with Antonio',
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://rental-app-ebon.vercel.app/"),
+  openGraph:  {
+    type: "website",
+    url: "https://rental-app-ebon.vercel.app/",
+    title: "Airbnb Clone",
+    description: "A full stack Airbnb clone built with Next.js 13, React, Tailwind, Prisma, MongoDB, and NextAuth",
+    siteName: "Airbnb Clone",
+    images: [{
+      url: "https://www.digital.ink/wp-content/uploads/airbnb_logo_detail.jpg",
+    }],
+  }
 }
+
 
 export default async function RootLayout({
   children,
